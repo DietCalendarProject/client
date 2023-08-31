@@ -1,0 +1,18 @@
+.body {
+  width: 75rem;
+}
+.row {
+  width: 75rem;
+}
+.col {
+  border: 0.1rem solid black;
+  width: 10.7rem;
+  height: 10.59rem;
+}
+.disabled {
+  color: gray;
+  pointer-events: none;
+}
+.selected {
+  font-weight: bold;
+}
