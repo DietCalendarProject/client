@@ -1,0 +1,34 @@
+img {
+  width: 8.125rem;
+}
+.body {
+  width: 75rem;
+}
+.row {
+  width: 75rem;
+}
+.col {
+  border: 0.1rem solid black;
+  width: 10.7rem;
+  height: 10.59rem;
+}
+.disabled {
+  color: gray;
+  pointer-events: none;
+}
+.disabled img {
+  display: none;
+}
+.selected {
+  font-weight: bold;
+}
+.valid-day {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.not-valid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
