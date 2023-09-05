@@ -1,0 +1,18 @@
+.calender-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.result {
+    width: 75rem;
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 1rem;
+  }
+  
+  .result-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  
