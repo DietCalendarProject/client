@@ -74,7 +74,7 @@ const LoginForm = (props) => {
       </div>
       <div className="form-actions">
         <Link to="/calendar">
-          <button disabled={!formIsValid}>Submit</button>
+          <button disabled={!formIsValid}>Login</button>
         </Link>
       </div>
     </form>
