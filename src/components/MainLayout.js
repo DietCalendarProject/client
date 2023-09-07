@@ -1,12 +1,13 @@
 import React from "react";
 import MainNavBar from "./MainNavBar";
+import MainHeader from "./MainHeader";
 import { Outlet } from "react-router-dom";
 import "./MainLayout.css";
 
 const MainLayout = () => {
   return (
     <div className="root-wrapper">
-      <header>login/logout button</header>
+      <MainHeader />
       <main>
         <Outlet />
       </main>
