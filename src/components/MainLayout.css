@@ -3,6 +3,9 @@ header {
 }
 main {
   height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 footer {
   height: 8vh;
