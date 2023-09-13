@@ -1,6 +1,6 @@
 import useInput from "../hooks/useInput";
 import "./LoginForm.css";
-import { Link } from "react-router-dom";
+import Button from "../UI/Button";
 
 const RegisterForm = (props) => {
   const {
@@ -156,9 +156,7 @@ const RegisterForm = (props) => {
       </div>
 
       <div className="form-actions">
-        <Link to="/">
-          <button disabled={!formIsValid}>Submit</button>
-        </Link>
+        <Button to="/" disapbled={!formIsValid} title="SUBMIT" />
       </div>
     </form>
   );
