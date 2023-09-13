@@ -19,8 +19,7 @@ function App() {
       path: "/",
       element: <MainLayout />,
       children: [
-        { path: "/", element: <HomePage /> },
-        { path: "/login", element: <LoginPage /> },
+        { path: "/", element: <LoginPage /> },
         { path: "/register", element: <RegisterPage /> },
         { path: "/calendar", element: <CalendarPage /> },
         { path: "/project-description", element: <ProjectDescription /> },
