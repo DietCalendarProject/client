@@ -25,7 +25,7 @@ const Button = styled.button`
   }
 `;
 
-function BasicBlutton({
+function BasicButton({
   title,
   onclick,
   alignItems = "center",
@@ -41,4 +41,4 @@ function BasicBlutton({
   );
 }
 
-export default BasicBlutton;
+export default BasicButton;
