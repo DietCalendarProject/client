@@ -1,0 +1,14 @@
+.menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #e6b702;
+}
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+}
