@@ -3,7 +3,7 @@ import "./style.css";
 import Menu from "./components/menu";
 import Main from "./components/main";
 import Card from "./components/card";
-import BasicBlutton from "../components/button/button";
+import BasicButton from "../components/button/button";
 import Background from "./background";
 
 const Post = () => {
@@ -16,9 +16,9 @@ const Post = () => {
           <Menu></Menu>
           <Main></Main>
           <Card></Card>
-          <BasicBlutton title={"CLOSE"}>
+          <BasicButton title={"CLOSE"}>
             {/* onclick 시 모달 창닫기 */}
-          </BasicBlutton>
+          </BasicButton>
         </div>
       </div>
     </>
