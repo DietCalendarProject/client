@@ -4,8 +4,8 @@ import Button from "../UI/Button";
 const MainHeader = () => {
   return (
     <header>
-      <Button to="/login">Login</Button>
-      <Button to="/register">Register</Button>
+      <Button to="/login" title="LOGIN" />
+      <Button to="/register" title="REGISTER" />
     </header>
   );
 };

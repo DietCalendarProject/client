@@ -1,6 +1,7 @@
 import useInput from "../hooks/useInput";
 import "./LoginForm.css";
 import { Link } from "react-router-dom";
+import Button from "../UI/Button";
 
 const LoginForm = (props) => {
   const {
@@ -73,9 +74,7 @@ const LoginForm = (props) => {
         )}
       </div>
       <div className="form-actions">
-        <Link to="/calendar">
-          <button disabled={!formIsValid}>Login</button>
-        </Link>
+        <Button to="/calendar" disabled={!formIsValid} title="LOGIN" />
       </div>
     </form>
   );
