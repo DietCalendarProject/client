@@ -75,6 +75,7 @@ const LoginForm = (props) => {
       </div>
       <div className="form-actions">
         <Button to="/calendar" disabled={!formIsValid} title="LOGIN" />
+        <Button to="/register" title="REGISTER" />
       </div>
     </form>
   );
