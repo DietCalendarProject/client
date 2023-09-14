@@ -4,8 +4,8 @@ import theme from "../../../assets/theme";
 
 const Container = styled.div`
   display: flex;
-  justify-content: ${({ justifyContent }) => justifyContent};
-  align-items: ${({ alignItems }) => alignItems};
+  justify-content: ${({ justifycontent }) => justifycontent};
+  align-items: ${({ alignitems }) => alignitems};
 `;
 
 const Button = styled.button`
@@ -14,32 +14,32 @@ const Button = styled.button`
   border-color: rgba(0, 0, 0, 0);
   padding: 7px 15px 7px 15px;
   border-style: none;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ backgroundcolor }) => backgroundcolor};
   color: ${({ color }) => color};
   transition: all 0.3s;
 
   &:hover {
     background-color: ${({ color }) => color};
-    color: ${({ backgroundColor }) => backgroundColor};
+    color: ${({ backgroundcolor }) => backgroundcolor};
     font-weight: bolder;
   }
 `;
 
 function BasicButton({
   title,
-  backgroundColor = theme.green.strong,
+  backgroundcolor = theme.green.strong,
   color = theme.green.weak,
   onclick,
-  alignItems = "center",
-  justifyContent = "center",
+  alignitems = "center",
+  justifycontent = "center",
   ...rest
 }) {
   return (
-    <Container alignItems={alignItems} justifyContent={justifyContent}>
+    <Container alignitems={alignitems} justifycontent={justifycontent}>
       <Button
-        onclick={onclick}
+        onClick={onclick}
         color={color}
-        backgroundColor={backgroundColor}
+        backgroundcolor={backgroundcolor}
         {...rest}
       >
         {title}

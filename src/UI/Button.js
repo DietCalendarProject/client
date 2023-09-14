@@ -5,8 +5,8 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: ${({ justifyContent }) => justifyContent};
-  align-items: ${({ alignItems }) => alignItems};
+  justify-content: ${({ justifycontent }) => justifycontent};
+  align-items: ${({ alignitems }) => alignitems};
 `;
 
 const Button = styled.button`
@@ -28,15 +28,15 @@ const Button = styled.button`
 
 const BasicButton = ({
   title,
-  onclick,
+  onClick,
   alignItems = "center",
   justifyContent = "center",
   ...rest
 }) => {
   return (
     <Link to={rest.to} style={{ textDecoration: "none" }}>
-      <Container alignItems={alignItems} justifyContent={justifyContent}>
-        <Button onclick={onclick} {...rest}>
+      <Container alignitems={alignItems} justifycontent={justifyContent}>
+        <Button onClick={onClick} {...rest}>
           {title}
         </Button>
       </Container>

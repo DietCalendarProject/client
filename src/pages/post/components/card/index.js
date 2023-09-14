@@ -45,12 +45,12 @@ const Card = ({
       <div className="card-box_btns">
         <BasicBlutton
           title={title}
-          justifyContent={"end"}
+          justifycontent={"end"}
           onClick={onClickEdit}
         ></BasicBlutton>
         <BasicBlutton
           title={"CLOSE"}
-          justifyContent={"end"}
+          justifycontent={"end"}
           onclick={onClickClose}
         ></BasicBlutton>
       </div>
