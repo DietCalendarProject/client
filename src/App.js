@@ -5,7 +5,7 @@ import MainLayout from "./components/MainLayout";
 
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import CalendarPage from "./pages/CalendarPage";
+import CalendarPage from "./pages/Calendar/CalendarPage";
 import ProjectDescription from "./pages/ProjectDescription";
 import MyPage from "./pages/MyPage";
 import Post from "./post";

@@ -1,0 +1,13 @@
+.calender-page{
+  display: flex;
+  justify-content: center;
+}
+.calender {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
