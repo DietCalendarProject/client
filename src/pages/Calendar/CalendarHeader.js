@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Icon } from "@iconify/react";
 import { format, addMonths, subMonths } from "date-fns";
 import "./CalendarHeader.css";
 import Arrow from "../../components/arrow";

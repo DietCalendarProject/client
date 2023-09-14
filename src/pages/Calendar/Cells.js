@@ -14,8 +14,10 @@ import {
 import "./Cells.css";
 import happy from "./happy.png";
 import sad from "./sad.png";
+import Post from "../post/index";
 
 const Cells = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const monthStart = startOfMonth(props.currentDate);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
@@ -50,6 +52,11 @@ const Cells = (props) => {
     );
   }
 
+  const cellClick = (cloneDay) => {
+    props.onDateClick(cloneDay);
+    setIsOpen(true);
+  };
+
   while (day <= endDate) {
     for (let i = 0; i < 7; i++) {
       formattedDate = format(day, "d");
@@ -75,7 +82,8 @@ const Cells = (props) => {
               : "valid"
           }`}
           key={day}
-          onClick={() => props.onDateClick(cloneDay)}
+          onClick={() => cellClick(cloneDay)}
+          // onClick={() => props.onDateClick(cloneDay)}
         >
           <div
             className={
@@ -103,7 +111,12 @@ const Cells = (props) => {
     days = [];
   }
 
-  return <div className="body">{rows}</div>;
+  return (
+    <>
+      {isOpen && <Post isOpen={isOpen} setIsOpen={setIsOpen}/>}
+      <div className="body">{rows}</div>;
+    </>
+  );
 };
 
 export default Cells;
