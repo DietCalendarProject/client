@@ -10,8 +10,8 @@ const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
 
-  const onDateClick = (day) => {
-    setSelectedDate(day);
+  const onDateClick = (cloneDay) => {
+    setSelectedDate(cloneDay);
   };
 
   return (

@@ -5,6 +5,7 @@ import Edit from "./components/edit";
 import Card from "./components/card";
 import Background from "./background";
 import { blankPost, writedPost } from "../../test";
+import ReactDOM from "react-dom";
 
 const dumy = {
   date: "9월 16일",
@@ -48,14 +49,25 @@ const Post = ({
   memo = "엽떡좋앙",
   emoticon = "happy",
   writed = true,
+  isOpen,
+  setIsOpen,
 }) => {
   const [edit, setEdit] = useState(false);
   const [isBlank, setIsBlank] = useState(writed);
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     // <>
     // <Background>
     <>
-      <div className="background">
+      {ReactDOM.createPortal(
+        <div className="background" onClick={closeModal} />,
+        document.getElementById("backdrop-root")
+      )}
+      {ReactDOM.createPortal(
         <div className="backDrop">
           <Menu date={date}></Menu>
           <Card
@@ -65,6 +77,7 @@ const Post = ({
             memo={memo}
             emoticon={selectEmoticon(emoticon)}
             onClickEdit={() => setEdit(!edit)}
+            onClickClose={closeModal}
             title={edit === false ? "EDIT" : "X"}
           ></Card>
           {edit === true ? (
@@ -77,8 +90,9 @@ const Post = ({
           ) : (
             ""
           )}
-        </div>
-      </div>
+        </div>,
+        document.getElementById("overlay-root")
+      )}
     </>
     // {/* </Background>
     // </> */}
