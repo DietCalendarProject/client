@@ -61,7 +61,7 @@ const Post = ({
   const year = today.getFullYear();
   let month = today.getMonth() + 1;
   let dates = today.getDate();
-  month = month > 10 ? month : "0" + month;
+  month = month > 9 ? month : "0" + month;
   dates = dates > 9 ? dates : "0" + dates;
   const todayDate = `${year}-${month}-${dates}`;
 
