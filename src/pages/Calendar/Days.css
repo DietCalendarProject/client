@@ -1,11 +1,14 @@
-.row {
+.row-day {
+  width: 10.7rem;
+  height: 1.5rem;
+  border-top: 0.1rem solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row-days {
   display: flex;
   justify-content: center;
   width: 75rem;
-}
-.row-days {
-  width: 10.7rem;
-  border: 0.1rem solid black;
-  display: flex;
-  justify-content: center;
+  background-color: #f5ff8b;
 }

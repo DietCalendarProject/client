@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { format, addMonths, subMonths } from "date-fns";
-import "./CalendarHeader.css"
+import "./CalendarHeader.css";
+import Arrow from "../../components/arrow";
+import theme from "../../assets/theme";
 
 const Header = (props) => {
-
   const prevMonth = () => {
     props.setCurrentDate(subMonths(props.currentDate, 1));
   };
@@ -13,12 +14,22 @@ const Header = (props) => {
   };
   return (
     <div className="header">
-      <div className="row-start">
-        <Icon icon="bi:arrow-left-circle-fill" onClick={prevMonth} />
+      <div className="arrow before" onClick={prevMonth}>
+        <Arrow
+          strokeWidth={5}
+          stroke={theme.green.weak}
+          fill={theme.green.strong}
+          isright={false}
+        ></Arrow>
       </div>
       <div className="text">{format(props.currentDate, "yyyy년 MM월")}</div>
-      <div className="row-end">
-        <Icon icon="bi:arrow-right-circle-fill" onClick={nextMonth} />
+      <div className="arrow next" onClick={nextMonth}>
+        <Arrow
+          strokeWidth={5}
+          stroke={theme.green.weak}
+          fill={theme.green.strong}
+          isright={true}
+        ></Arrow>
       </div>
     </div>
   );

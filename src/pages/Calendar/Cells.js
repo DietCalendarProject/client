@@ -12,6 +12,8 @@ import {
 } from "date-fns";
 
 import "./Cells.css";
+import happy from "./happy.png";
+import sad from "./sad.png";
 
 const Cells = (props) => {
   const monthStart = startOfMonth(props.currentDate);
@@ -27,12 +29,12 @@ const Cells = (props) => {
   const [data, setData] = useState([
     {
       date: "2023-09-07",
-      emoticon: null,
+      emoticon: "happy",
       memo: "1111",
     },
     {
       date: "2023-09-14",
-      emoticon: null,
+      emoticon: "sad",
       memo: "2222",
     },
   ]);
@@ -44,7 +46,7 @@ const Cells = (props) => {
       calendarList[currentValue.date] = [];
     }
     calendarList[currentValue.date] = calendarList[currentValue.date].concat(
-      currentValue.memo
+      currentValue.emoticon
     );
   }
 
@@ -52,6 +54,7 @@ const Cells = (props) => {
     for (let i = 0; i < 7; i++) {
       formattedDate = format(day, "d");
       const cloneDay = day;
+
       const today = cloneDay;
       const year = today.getFullYear();
       let month = today.getMonth() + 1;
@@ -83,8 +86,10 @@ const Cells = (props) => {
           >
             {formattedDate}
 
-            <div>{`${calendarList[todayDate]?.join() || ""}`}</div>
-            {/* <img src="2-b.png" alt="" /> */}
+            <div className="emoticon">
+              {`${calendarList[todayDate]}` === "happy" && <img src={happy} />}
+              {`${calendarList[todayDate]}` === "sad" && <img src={sad} />}
+            </div>
           </div>
         </div>
       );
