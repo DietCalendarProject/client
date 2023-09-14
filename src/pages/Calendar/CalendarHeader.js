@@ -11,6 +11,7 @@ const Header = (props) => {
   const nextMonth = () => {
     props.setCurrentDate(addMonths(props.currentDate, 1));
   };
+
   return (
     <div className="header">
       <div className="arrow before" onClick={prevMonth}>

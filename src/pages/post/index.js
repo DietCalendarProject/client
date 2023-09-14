@@ -49,11 +49,21 @@ const Post = ({
   memo = "엽떡좋앙",
   emoticon = "happy",
   writed = true,
-  isOpen,
   setIsOpen,
+  prevDate,
+  nextDate,
+  currentDate,
 }) => {
   const [edit, setEdit] = useState(false);
   const [isBlank, setIsBlank] = useState(writed);
+
+  const today = currentDate;
+  const year = today.getFullYear();
+  let month = today.getMonth() + 1;
+  let dates = today.getDate();
+  month = month > 10 ? month : "0" + month;
+  dates = dates > 9 ? dates : "0" + dates;
+  const todayDate = `${year}-${month}-${dates}`;
 
   const closeModal = () => {
     setIsOpen(false);
@@ -69,7 +79,7 @@ const Post = ({
       )}
       {ReactDOM.createPortal(
         <div className="backDrop">
-          <Menu date={date}></Menu>
+          <Menu date={todayDate} prevDate={prevDate} nextDate={nextDate}></Menu>
           <Card
             isBlank={isBlank}
             date={date}
