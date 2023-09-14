@@ -42,7 +42,7 @@ const Edit = () => {
       <div className="main-box submit">
         <BasicBlutton
           title={"SUBMIT"}
-          justifyContent={"end"}
+          justifycontent={"end"}
           onClick={() => {
             checkInput(
               weightInputRef.current.value,
