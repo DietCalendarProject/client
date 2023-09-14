@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import theme from "../../../assets/theme";
 
 const Container = styled.div`
-  width: 100%;
   display: flex;
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
@@ -14,19 +14,21 @@ const Button = styled.button`
   border-color: rgba(0, 0, 0, 0);
   padding: 7px 15px 7px 15px;
   border-style: none;
-  background-color: #72d4cf;
-  color: #ffffff;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  color: ${({ color }) => color};
   transition: all 0.3s;
 
   &:hover {
-    background-color: #ffffff;
-    color: #72d4cf;
+    background-color: ${({ color }) => color};
+    color: ${({ backgroundColor }) => backgroundColor};
     font-weight: bolder;
   }
 `;
 
 function BasicBlutton({
   title,
+  backgroundColor = theme.green.strong,
+  color = theme.green.weak,
   onclick,
   alignItems = "center",
   justifyContent = "center",
@@ -34,7 +36,12 @@ function BasicBlutton({
 }) {
   return (
     <Container alignItems={alignItems} justifyContent={justifyContent}>
-      <Button onclick={onclick} {...rest}>
+      <Button
+        onclick={onclick}
+        color={color}
+        backgroundColor={backgroundColor}
+        {...rest}
+      >
         {title}
       </Button>
     </Container>

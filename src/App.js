@@ -9,7 +9,7 @@ import RegisterPage from "./pages/RegisterPage";
 import CalendarPage from "./pages/CalendarPage";
 import ProjectDescription from "./pages/ProjectDescription";
 import MyPage from "./pages/MyPage";
-import Post from "./post";
+import Post from "./pages/post";
 import theme from "./assets/theme";
 import { ThemeProvider } from "styled-components";
 
