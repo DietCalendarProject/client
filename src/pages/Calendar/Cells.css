@@ -5,7 +5,9 @@ img {
   width: 75rem;
 }
 .row {
+  display: flex;
   width: 75rem;
+  background-color: #f8feb5;
 }
 .col {
   border: 0.1rem solid black;
@@ -31,4 +33,13 @@ img {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.emoticon {
+  margin-top: 1rem;
+}
+.emoticon img {
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
 }

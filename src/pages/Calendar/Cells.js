@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   format,
   endOfMonth,
@@ -12,6 +12,8 @@ import {
 } from "date-fns";
 
 import "./Cells.css";
+import happy from "./happy.png";
+import sad from "./sad.png";
 
 const Cells = (props) => {
   const monthStart = startOfMonth(props.currentDate);
@@ -24,10 +26,43 @@ const Cells = (props) => {
   let day = startDate;
   let formattedDate = "";
 
+  const [data, setData] = useState([
+    {
+      date: "2023-09-07",
+      emoticon: "happy",
+      memo: "1111",
+    },
+    {
+      date: "2023-09-14",
+      emoticon: "sad",
+      memo: "2222",
+    },
+  ]);
+
+  const calendarList = {};
+  for (let index = 0; index < data.length; index++) {
+    const currentValue = data[index];
+    if (!calendarList[currentValue]) {
+      calendarList[currentValue.date] = [];
+    }
+    calendarList[currentValue.date] = calendarList[currentValue.date].concat(
+      currentValue.emoticon
+    );
+  }
+
   while (day <= endDate) {
     for (let i = 0; i < 7; i++) {
       formattedDate = format(day, "d");
       const cloneDay = day;
+
+      const today = cloneDay;
+      const year = today.getFullYear();
+      let month = today.getMonth() + 1;
+      let date = today.getDate();
+      month = month > 10 ? month : "0" + month;
+      date = date > 10 ? date : "0" + date;
+      const todayDate = `${year}-${month}-${date}`;
+
       days.push(
         <div
           className={`col cell ${
@@ -50,7 +85,11 @@ const Cells = (props) => {
             }
           >
             {formattedDate}
-            <img src="2-b.png" alt="" />
+
+            <div className="emoticon">
+              {`${calendarList[todayDate]}` === "happy" && <img src={happy} />}
+              {`${calendarList[todayDate]}` === "sad" && <img src={sad} />}
+            </div>
           </div>
         </div>
       );
