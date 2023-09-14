@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./style.css";
-import ImgButton from "../../../components/button/imgbutton";
-import BasicBlutton from "../../../components/button/button";
-import Advice from "../../../components/advice";
-import checkInput from "../main/useLogic";
+import ImgButton from "../../../../components/button/imgbutton";
+import BasicBlutton from "../../../../components/button/button";
+import Advice from "../../../../components/advice";
+import checkInput from "./useLogic";
 
-const Main = ({ date }) => {
+const Edit = () => {
   const weightInputRef = useRef();
   const diaryInputRef = useRef();
   const btnInfo = [
@@ -55,4 +55,4 @@ const Main = ({ date }) => {
     </div>
   );
 };
-export default Main;
+export default Edit;

@@ -1,8 +1,9 @@
 import React from "react";
 import "./style.css";
-import Arrow from "../../../components/arrow";
-import theme from "../../../assets/theme";
-const Menu = () => {
+import Arrow from "../../../../components/arrow";
+import theme from "../../../../assets/theme";
+
+const Menu = ({ date }) => {
   return (
     <div className="menu">
       <div className="arrow before">
@@ -13,10 +14,7 @@ const Menu = () => {
           isright={false}
         ></Arrow>
       </div>
-      <div>
-        8월 16일
-        {/* {날짜변수} */}
-      </div>
+      <div>{date}</div>
       <div className="arrow next">
         <Arrow
           strokeWidth={5}
