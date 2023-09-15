@@ -1,14 +1,25 @@
 .row-day {
   width: 10.7rem;
-  height: 1.5rem;
-  border-top: 0.1rem solid black;
+  height: 2.5rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.row-day:nth-child(1) {
+  color: #3aa19c;
+}
+
+.row-day:nth-child(7) {
+  color: #3aa19c;
 }
 .row-days {
   display: flex;
   justify-content: center;
   width: 75rem;
-  background-color: #f5ff8b;
+  background-color: white;
+  color: #72d4cf;
+  font-weight: bolder;
+  font-size: 1.8rem;
+  border-bottom: 0.3rem, solid, #3aa19c;
 }

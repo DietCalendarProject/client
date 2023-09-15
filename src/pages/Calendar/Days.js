@@ -1,12 +1,16 @@
 import React from "react";
-import "./Days.css"
+import "./Days.css";
 
 const Days = () => {
   const days = [];
-  const date = ["일", "월", "화", "수", "목", "금", "토"];
+  const date = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   for (let i = 0; i < 7; i++) {
-    days.push(<div className="row-day" key={date[i]}>{date[i]}</div>);
+    days.push(
+      <div className="row-day" key={date[i]}>
+        {date[i]}
+      </div>
+    );
   }
   return <div className="row-days">{days}</div>;
 };

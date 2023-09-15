@@ -7,12 +7,21 @@ img {
 .row {
   display: flex;
   width: 75rem;
-  background-color: #f8feb5;
+  background-color: rgba(248, 254, 181, 1);
+  transition: 0.5s;
 }
 .col {
-  border: 0.1rem solid black;
+  border: 0.1rem solid white;
   width: 10.7rem;
   height: 10.59rem;
+}
+.cell {
+  padding-top: 1rem;
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+.valid {
+  color: #e87902;
 }
 .disabled {
   color: gray;
@@ -22,7 +31,10 @@ img {
   display: none;
 }
 .selected {
+  color: #e87902;
   font-weight: bold;
+  font-size: 1.7rem;
+  background-color: rgb(251, 255, 211);
 }
 .valid-day {
   display: flex;
@@ -39,7 +51,7 @@ img {
 }
 .emoticon img {
   border-radius: 100px;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   cursor: pointer;
 }

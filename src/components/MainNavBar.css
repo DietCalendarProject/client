@@ -1,5 +1,20 @@
+.container {
+  width: 100%;
+  margin-top: 4rem;
+  height: 7rem;
+  background-color: #72d4cf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 nav ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+nav ul li {
+  color: white;
+  font-weight: bold;
 }
