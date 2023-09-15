@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Icon } from "@iconify/react";
 import { format, addMonths, subMonths } from "date-fns";
 import "./CalendarHeader.css";
 import Arrow from "../../components/arrow";
@@ -12,6 +11,7 @@ const Header = (props) => {
   const nextMonth = () => {
     props.setCurrentDate(addMonths(props.currentDate, 1));
   };
+
   return (
     <div className="header">
       <div className="arrow before" onClick={prevMonth}>

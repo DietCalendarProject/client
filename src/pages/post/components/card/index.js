@@ -10,7 +10,7 @@ const Card = ({
   memo,
   emoticon,
   onClickEdit = "",
-  onClickClose = "",
+  onClickClose,
 }) => {
   // 데이터를 받아와서 get으로 보여줘야함
   return (

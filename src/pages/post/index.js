@@ -21,16 +21,37 @@ const Post = ({
   memo = "엽떡좋앙",
   emoticon = "happy",
   writed = true,
+  setIsOpen,
+  prevDate,
+  nextDate,
+  currentDate,
 }) => {
   const [edit, setEdit] = useState(false);
   const [isBlank, setIsBlank] = useState(writed);
+
+  const today = currentDate;
+  const year = today.getFullYear();
+  let month = today.getMonth() + 1;
+  let dates = today.getDate();
+  month = month > 9 ? month : "0" + month;
+  dates = dates > 9 ? dates : "0" + dates;
+  const todayDate = `${year}-${month}-${dates}`;
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     // <>
     // <Background>
     <>
-      <div className="background">
+      {ReactDOM.createPortal(
+        <div className="background" onClick={closeModal} />,
+        document.getElementById("backdrop-root")
+      )}
+      {ReactDOM.createPortal(
         <div className="backDrop">
-          <Menu date={date}></Menu>
+          <Menu date={todayDate} prevDate={prevDate} nextDate={nextDate}></Menu>
           <Card
             isBlank={isBlank}
             date={date}
@@ -38,6 +59,7 @@ const Post = ({
             memo={memo}
             emoticon={selectEmoticon(emoticon)}
             onClickEdit={() => setEdit(!edit)}
+            onClickClose={closeModal}
             title={edit === false ? "EDIT" : "X"}
           ></Card>
           {edit === true ? (
@@ -50,8 +72,9 @@ const Post = ({
           ) : (
             ""
           )}
-        </div>
-      </div>
+        </div>,
+        document.getElementById("overlay-root")
+      )}
     </>
     // {/* </Background>
     // </> */}

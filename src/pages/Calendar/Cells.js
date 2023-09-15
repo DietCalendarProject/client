@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   format,
   endOfMonth,
@@ -9,13 +9,16 @@ import {
   isSameMonth,
   parse,
   addDays,
+  subDays,
 } from "date-fns";
 
 import "./Cells.css";
 import happy from "./happy.png";
 import sad from "./sad.png";
+import Post from "../post/index";
 
 const Cells = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const monthStart = startOfMonth(props.currentDate);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
@@ -50,6 +53,21 @@ const Cells = (props) => {
     );
   }
 
+  const cellClick = (cloneDay) => {
+    props.onDateClick(cloneDay);
+    setIsOpen(true);
+    // props.setCurrentDate(props.selectedDate);
+  };
+  useEffect(() => {
+    props.setCurrentDate(props.selectedDate);
+  }, [props.selectedDate]);
+  const prevDate = () => {
+    props.setCurrentDate(subDays(props.currentDate, 1));
+  };
+  const nextDate = () => {
+    props.setCurrentDate(addDays(props.currentDate, 1));
+  };
+
   while (day <= endDate) {
     for (let i = 0; i < 7; i++) {
       formattedDate = format(day, "d");
@@ -75,7 +93,8 @@ const Cells = (props) => {
               : "valid"
           }`}
           key={day}
-          onClick={() => props.onDateClick(cloneDay)}
+          onClick={() => cellClick(cloneDay)}
+          // onClick={() => props.onDateClick(cloneDay)}
         >
           <div
             className={
@@ -103,7 +122,19 @@ const Cells = (props) => {
     days = [];
   }
 
-  return <div className="body">{rows}</div>;
+  return (
+    <>
+      {isOpen && (
+        <Post
+          setIsOpen={setIsOpen}
+          prevDate={prevDate}
+          nextDate={nextDate}
+          currentDate={props.currentDate}
+        />
+      )}
+      <div className="body">{rows}</div>;
+    </>
+  );
 };
 
 export default Cells;
