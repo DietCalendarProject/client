@@ -29,33 +29,35 @@ const NavStyle = styled(NavLink)`
 
 const MainNavBar = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <div>
-            <NavStyle to="/" end>
-              home
-            </NavStyle>
-          </div>
-        </li>
-        <li>
-          <div>
-            <NavStyle to="/calendar">calendar</NavStyle>
-          </div>
-        </li>
+    <div className="container">
+      <nav>
+        <ul>
+          <li>
+            <div>
+              <NavStyle to="/" end>
+                Home
+              </NavStyle>
+            </div>
+          </li>
+          <li>
+            <div>
+              <NavStyle to="/calendar">Calendar</NavStyle>
+            </div>
+          </li>
 
-        <li>
-          <div>
-            <NavStyle to="/my-page">my page</NavStyle>
-          </div>
-        </li>
-        <li>
-          <div>
-            <NavStyle to="/project-description">project description</NavStyle>
-          </div>
-        </li>
-      </ul>
-    </nav>
+          <li>
+            <div>
+              <NavStyle to="/my-page">My page</NavStyle>
+            </div>
+          </li>
+          <li>
+            <div>
+              <NavStyle to="/project-description">Project description</NavStyle>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 };
 

@@ -2,12 +2,16 @@ header {
   height: 7vh;
 }
 main {
-}
-footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 4rem;
-  height: 8vh;
-  background-color: #72d4cf;
+  align-items: start;
+}
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  bottom: 0rem;
 }
