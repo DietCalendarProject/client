@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SvgArrow from "../../assets/svgArrow";
 
 const Container = styled.div`
-  width: 100%;
+  width: ${({ width }) => width};
   height: 100%;
   backgroundcolor: rgba(0, 0, 0, 0);
   bordercolor: rgba(0, 0, 0, 0);
@@ -22,9 +22,22 @@ const Container = styled.div`
   }
 `;
 
-function Arrow({ isright, strokeWidth, stroke, fill, ...rest }) {
+function Arrow({
+  isright,
+  strokeWidth,
+  stroke,
+  fill,
+  width = "100%",
+  ...rest
+}) {
   return (
-    <Container strokeWidth={strokeWidth} stroke={stroke} fill={fill}>
+    <Container
+      strokeWidth={strokeWidth}
+      stroke={stroke}
+      fill={fill}
+      width={width}
+      {...rest}
+    >
       <SvgArrow
         className="arrow-svg"
         transform={

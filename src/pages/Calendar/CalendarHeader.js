@@ -20,6 +20,7 @@ const Header = (props) => {
           stroke={theme.green.weak}
           fill={theme.green.strong}
           isright={false}
+          width={"3rem"}
         ></Arrow>
       </div>
       <div className="text">{format(props.currentDate, "yyyy년 MM월")}</div>
@@ -29,6 +30,7 @@ const Header = (props) => {
           stroke={theme.green.weak}
           fill={theme.green.strong}
           isright={true}
+          width={"3rem"}
         ></Arrow>
       </div>
     </div>

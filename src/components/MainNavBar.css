@@ -3,3 +3,8 @@ nav ul {
   justify-content: space-around;
   align-items: center;
 }
+
+nav ul li {
+  color: white;
+  font-weight: bold;
+}
