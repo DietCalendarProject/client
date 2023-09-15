@@ -4,6 +4,7 @@ import Menu from "./components/menu";
 import Edit from "./components/edit";
 import Card from "./components/card";
 import Background from "./background";
+import ReactDOM from "react-dom";
 
 function selectEmoticon(a) {
   if (a === "happy") {
