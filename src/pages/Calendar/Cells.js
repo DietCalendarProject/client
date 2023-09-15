@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   format,
   endOfMonth,
@@ -9,6 +9,7 @@ import {
   isSameMonth,
   parse,
   addDays,
+  subDays,
 } from "date-fns";
 
 import "./Cells.css";
@@ -55,6 +56,16 @@ const Cells = (props) => {
   const cellClick = (cloneDay) => {
     props.onDateClick(cloneDay);
     setIsOpen(true);
+    // props.setCurrentDate(props.selectedDate);
+  };
+  useEffect(() => {
+    props.setCurrentDate(props.selectedDate);
+  }, [props.selectedDate]);
+  const prevDate = () => {
+    props.setCurrentDate(subDays(props.currentDate, 1));
+  };
+  const nextDate = () => {
+    props.setCurrentDate(addDays(props.currentDate, 1));
   };
 
   while (day <= endDate) {
@@ -113,7 +124,14 @@ const Cells = (props) => {
 
   return (
     <>
-      {isOpen && <Post isOpen={isOpen} setIsOpen={setIsOpen}/>}
+      {isOpen && (
+        <Post
+          setIsOpen={setIsOpen}
+          prevDate={prevDate}
+          nextDate={nextDate}
+          currentDate={props.currentDate}
+        />
+      )}
       <div className="body">{rows}</div>;
     </>
   );

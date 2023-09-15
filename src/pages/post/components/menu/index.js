@@ -3,10 +3,10 @@ import "./style.css";
 import Arrow from "../../../../components/arrow";
 import theme from "../../../../assets/theme";
 
-const Menu = ({ date }) => {
+const Menu = ({ date, prevDate, nextDate }) => {
   return (
     <div className="menu">
-      <div className="arrow before">
+      <div className="arrow before" onClick={prevDate}>
         <Arrow
           strokeWidth={5}
           stroke={theme.green.weak}
@@ -15,7 +15,7 @@ const Menu = ({ date }) => {
         ></Arrow>
       </div>
       <div>{date}</div>
-      <div className="arrow next">
+      <div className="arrow next" onClick={nextDate}>
         <Arrow
           strokeWidth={5}
           stroke={theme.green.weak}
