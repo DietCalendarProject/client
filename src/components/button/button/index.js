@@ -4,8 +4,8 @@ import theme from "../../../assets/theme";
 
 const Container = styled.div`
   display: flex;
-  justify-content: ${({ justifycontent }) => justifycontent};
-  align-items: ${({ alignitems }) => alignitems};
+  justify-content: ${({ $justifycontent }) => $justifycontent};
+  align-items: ${({ $alignitems }) => $alignitems};
 `;
 
 const Button = styled.button`
@@ -14,7 +14,7 @@ const Button = styled.button`
   border-color: rgba(0, 0, 0, 0);
   padding: 7px 15px 7px 15px;
   border-style: none;
-  background-color: ${({ backgroundcolor }) => backgroundcolor};
+  background-color: ${({ $backgroundcolor }) => $backgroundcolor};
   color: ${({ color }) => color};
   transition: all 0.3s;
 
@@ -35,11 +35,11 @@ function BasicButton({
   ...rest
 }) {
   return (
-    <Container alignitems={alignitems} justifycontent={justifycontent}>
+    <Container $alignitems={alignitems} $justifycontent={justifycontent}>
       <Button
         onClick={onclick}
         color={color}
-        backgroundcolor={backgroundcolor}
+        $backgroundcolor={backgroundcolor}
         {...rest}
       >
         {title}
