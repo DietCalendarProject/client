@@ -1,16 +1,18 @@
 import useInput from "../hooks/useInput";
+
 import "./LoginForm.css";
-import Button from "../UI/Button";
+
+import LoginButton from "../pages/login/LoginButton";
+import ErrorText from "./ErrorText";
+import EmailInput from "../pages/login/EmailInput";
 
 const LoginForm = (props) => {
   const {
-    value: enteredEmail,
     isValid: enteredEmailIsValid,
-    hasError: emailInputHasError,
-    valueChangeHandler: emailChangeHandler,
-    inputBlurHandler: emailBlurHandler,
     reset: resetEmailInput,
+    ...emailInputObject
   } = useInput((value) => value.includes("@"));
+
   const {
     value: enteredPassword,
     isValid: enteredPasswordIsValid,
@@ -32,33 +34,16 @@ const LoginForm = (props) => {
     if (!formIsValid) {
       return;
     }
-
     resetEmailInput();
     resetPasswordInput();
   };
-
-  const emailInputClasses = emailInputHasError
-    ? "form-control invalid"
-    : "form-control";
   const passwordInputClasses = passwordInputHasError
     ? "form-control invalid"
     : "form-control";
 
   return (
     <form onSubmit={formSubmissionHandler}>
-      <div className={emailInputClasses}>
-        <label htmlFor="email">Your E-Mail</label>
-        <input
-          type="email"
-          id="email"
-          onChange={emailChangeHandler}
-          onBlur={emailBlurHandler}
-          value={enteredEmail}
-        />
-        {emailInputHasError && (
-          <p className="error-text">Please enter a valid email.</p>
-        )}
-      </div>
+      <EmailInput emailInputObject={emailInputObject} />
       <div className={passwordInputClasses}>
         <label htmlFor="password">Your Password</label>
         <input
@@ -69,13 +54,10 @@ const LoginForm = (props) => {
           value={enteredPassword}
         />
         {passwordInputHasError && (
-          <p className="error-text">please enter a valid password</p>
+          <ErrorText text="please enter a valid password" />
         )}
       </div>
-      <div className="form-actions">
-        <Button to="/calendar" disabled={!formIsValid} title="LOGIN" />
-        <Button to="/register" title="REGISTER" />
-      </div>
+      <LoginButton $formIsValid={formIsValid} />
     </form>
   );
 };
