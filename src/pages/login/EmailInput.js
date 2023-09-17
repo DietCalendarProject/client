@@ -1,4 +1,5 @@
 import ErrorText from "../../components/ErrorText";
+import Input from "../../UI/Input";
 
 const EmailInput = ({
   emailInputObject: {
@@ -8,22 +9,19 @@ const EmailInput = ({
     inputBlurHandler: emailBlurHandler,
   },
 }) => {
-  const emailInputClasses = emailInputHasError
-    ? "form-control invalid"
-    : "form-control";
-
   return (
-    <div className={emailInputClasses}>
-      <label htmlFor="email">Your E-Mail</label>
-      <input
-        type="email"
+    <>
+      <Input
+        label="Email"
         id="email"
+        type="email"
+        hasError={emailInputHasError}
         onChange={emailChangeHandler}
-        onBlur={emailBlurHandler}
+        onblur={emailBlurHandler}
         value={enteredEmail}
       />
       {emailInputHasError && <ErrorText text="Please enter a valid email." />}
-    </div>
+    </>
   );
 };
 

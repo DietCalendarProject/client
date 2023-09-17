@@ -1,11 +1,8 @@
-import useInput from "../hooks/useInput";
+import useInput from "../../hooks/useInput";
 
-import "./LoginForm.css";
-
-import LoginButton from "../pages/login/LoginButton";
-import ErrorText from "./ErrorText";
-import EmailInput from "../pages/login/EmailInput";
-import PasswordInput from "../pages/login/PasswordInput";
+import LoginButton from "./LoginButton";
+import EmailInput from "./EmailInput";
+import PasswordInput from "./PasswordInput";
 
 const LoginForm = (props) => {
   const {

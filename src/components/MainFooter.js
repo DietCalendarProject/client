@@ -14,7 +14,6 @@ const Container = styled.div`
 const MainFooter = () => {
   return (
     <Container>
-      {" "}
       해당 사이트는 포트폴리오 용도로 만들어졌으며 상업적 목적이 전혀 없음을
       알려드립니다.
     </Container>

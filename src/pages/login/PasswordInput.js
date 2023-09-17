@@ -1,4 +1,5 @@
 import ErrorText from "../../components/ErrorText";
+import Input from "../../UI/Input";
 
 const PasswordInput = ({
   passwordInputObject: {
@@ -8,16 +9,13 @@ const PasswordInput = ({
     inputBlurHandler: passwordBlurHandler,
   },
 }) => {
-  const passwordInputClasses = passwordInputHasError
-    ? "form-control invalid"
-    : "form-control";
-
   return (
-    <div className={passwordInputClasses}>
-      <label htmlFor="password">Your Password</label>
-      <input
+    <>
+      <Input
+        label="Password"
         type="password"
         id="password"
+        hasError={passwordInputHasError}
         onChange={passwordChangeHandler}
         onBlur={passwordBlurHandler}
         value={enteredPassword}
@@ -25,7 +23,7 @@ const PasswordInput = ({
       {passwordInputHasError && (
         <ErrorText text="please enter a valid password" />
       )}
-    </div>
+    </>
   );
 };
 
