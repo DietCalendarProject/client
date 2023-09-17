@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./MainNavBar.css";
 import styled from "styled-components";
 
 const NavStyle = styled(NavLink)`
@@ -26,38 +25,26 @@ const NavStyle = styled(NavLink)`
     border-bottom: 0.2rem solid rgba(255, 255, 255, 0.7);
   }
 `;
+const NavContainer = styled.nav`
+  width: 87rem;
+  margin-top: 4rem;
+  height: 7rem;
+  background-color: #72d4cf;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
 
 const MainNavBar = () => {
   return (
-    <div className="container">
-      <nav>
-        <ul>
-          <li>
-            <div>
-              <NavStyle to="/" end>
-                Home
-              </NavStyle>
-            </div>
-          </li>
-          <li>
-            <div>
-              <NavStyle to="/calendar">Calendar</NavStyle>
-            </div>
-          </li>
-
-          <li>
-            <div>
-              <NavStyle to="/my-page">My page</NavStyle>
-            </div>
-          </li>
-          <li>
-            <div>
-              <NavStyle to="/project-description">Project description</NavStyle>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <NavContainer>
+      <NavStyle to="/" end>
+        Home
+      </NavStyle>
+      <NavStyle to="/calendar">Calendar</NavStyle>
+      <NavStyle to="/my-page">My page</NavStyle>
+      <NavStyle to="/project-description">Project description</NavStyle>
+    </NavContainer>
   );
 };
 

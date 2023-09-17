@@ -18,11 +18,21 @@ const Button = styled.button`
   background-color: #72d4cf;
   color: #ffffff;
   transition: all 0.3s;
+  margin: 0.5rem;
 
   &:hover {
     background-color: #ffffff;
     color: #72d4cf;
     font-weight: bolder;
+  }
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:active {
+    font-weight: 500;
+    background-color: #ccc;
+    color: #292929;
+    border-color: #ccc;
+    cursor: not-allowed;
   }
 `;
 
